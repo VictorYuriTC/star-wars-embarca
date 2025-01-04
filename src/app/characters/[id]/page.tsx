@@ -1,4 +1,4 @@
-import { StarWarsCharacter } from "@/app/types";
+import { StarWarsCharacter } from "@/types";
 import PageTemplate from "@/components/atomic/templates/page-template";
 import CharacterDetailsCard from "@/components/pages/characters/id/character-details-card";
 import {
