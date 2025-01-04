@@ -16,8 +16,8 @@ export function getCapitalizedString(randomStr?: string) {
 
 export function getFormattedCharacterBodyColor(randomStr?: string) {
   if (randomStr?.toLowerCase() === "n/a") {
-    return "Unknown";
+    return "No";
   }
 
-  return randomStr?.replaceAll(",", "");
+  return randomStr?.replaceAll(", ", "/");
 }

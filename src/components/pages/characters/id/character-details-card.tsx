@@ -23,6 +23,36 @@ type CharacterDetailsCardProps = {
 
 export default function CharacterDetailsCard(props: CharacterDetailsCardProps) {
   return (
+    <article
+      itemScope
+      itemProp="character"
+      itemType="https://schema.org/Person">
+      <CharacterDetailsHeader character={props.character} />
+
+      <CharacterDetailsBody character={props.character} />
+    </article>
+  );
+}
+
+type CharacterDetailsHeaderProps = {
+  character: StarWarsCharacter;
+};
+
+function CharacterDetailsHeader(props: CharacterDetailsHeaderProps) {
+  return (
+    <header className="flex flex-row items-center gap-4 pb-6 border-b border-gray-800">
+      <CharacterIdCard id={props.character.url.split("/").at(-2)} />
+      <CharacterNameCard name={props.character.name} />
+    </header>
+  );
+}
+
+type CharacterDetailsBodyProps = {
+  character: StarWarsCharacter;
+};
+
+function CharacterDetailsBody(props: CharacterDetailsBodyProps) {
+  return (
     <section className="flex flex-col gap-y-4 mt-10">
       <CharacterGenderCard gender={props.character.gender} />
 
@@ -41,6 +71,18 @@ export default function CharacterDetailsCard(props: CharacterDetailsCardProps) {
   );
 }
 
+type CharacterIdCardProps = {
+  id?: string;
+};
+
+function CharacterIdCard(props: CharacterIdCardProps) {
+  return (
+    <div className="flex flex-row items-center justify-center rounded-full w-10 h-10 bg-white">
+      <span className="text-xl text-black">{props.id ?? "Unknown"}</span>
+    </div>
+  );
+}
+
 type CharacterDetailCardProps = {
   label: string;
   value?: string;
@@ -52,10 +94,33 @@ function CharacterDetailCard(props: CharacterDetailCardProps) {
     <div className="flex flex-row items-center gap-3">
       <FontAwesomeIcon
         icon={props.icon}
-        style={{ color: "white" }}></FontAwesomeIcon>
+        className="text-white"></FontAwesomeIcon>
 
-      <p className="text-lg font-base text-white">{props.value}</p>
+      <p className="text-lg font-base text-white">
+        {getCapitalizedString(props.value)}
+      </p>
     </div>
+  );
+}
+
+type CharacterNameCardProps = {
+  name: string;
+};
+
+function CharacterNameCard(props: CharacterNameCardProps) {
+  const givenName = props.name.split(" ")?.[0];
+  const familyName = props.name.split(" ")?.slice(1).join(" ");
+  const UNKNOWN_NAME = "Unknown";
+
+  return (
+    <>
+      <meta itemProp="givenName" content={givenName} />
+      <meta itemProp="familyName" content={familyName} />
+
+      <h1 className="font-bold text-white text-3xl text-center">
+        {props.name ?? UNKNOWN_NAME}
+      </h1>
+    </>
   );
 }
 
@@ -74,11 +139,7 @@ type CharacterGenderCardProps = {
 
 function CharacterGenderCard(props: CharacterGenderCardProps) {
   const renderedGender =
-    props.gender === "n/a"
-      ? "No gender"
-      : !props.gender
-      ? "Unknown"
-      : props.gender;
+    props.gender === "n/a" || !props.gender ? "No gender" : props.gender;
 
   if (!Object.keys(POSSIBLE_GENDER_ICONS_MAP).includes(props.gender)) {
     return <></>;

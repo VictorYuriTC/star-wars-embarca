@@ -3,6 +3,7 @@ import { Orbitron } from "next/font/google";
 import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config as fontAwesomeConfig } from "@fortawesome/fontawesome-svg-core";
+import { SEO_EMBARCA_WARS_DESCRIPTION } from "@/constants/seo";
 fontAwesomeConfig.autoAddCss = false;
 
 const pollerOne = Orbitron({
@@ -10,8 +11,8 @@ const pollerOne = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "Star Wars Embarca",
-  description: "Project developed for Embarca's recruitment process",
+  title: "Embarca Wars",
+  description: SEO_EMBARCA_WARS_DESCRIPTION,
 };
 
 export default function RootLayout({
