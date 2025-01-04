@@ -29,6 +29,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     (_, index) => ({
       url: `${EMBARCA_STAR_WARS_URL}/characters/${index + 1}`,
+      priority: 1,
+      changeFrequency: "monthly",
     })
   );
 

@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     description: SEO_EMBARCA_WARS_DESCRIPTION,
     display: "browser",
     lang: "en-US",
-    name: "Embarca Wars | Renting spacial buses",
+    name: "Embarca Wars | Renting space shuttles",
     orientation: "any",
     start_url: "/",
   };
