@@ -1,4 +1,4 @@
-import { StarWarsCharacter, StarWarsCharacterGender } from "@/app/types";
+import { StarWarsCharacter, StarWarsCharacterGender } from "@/types";
 import {
   getCapitalizedString,
   getFormattedCharacterBodyColor,
@@ -77,7 +77,7 @@ type CharacterIdCardProps = {
 
 function CharacterIdCard(props: CharacterIdCardProps) {
   return (
-    <div className="flex flex-row items-center justify-center rounded-full w-10 h-10 bg-white">
+    <div className="flex flex-row items-center justify-center rounded-full py-3 px-3 bg-white">
       <span className="text-xl text-black">{props.id ?? "Unknown"}</span>
     </div>
   );
@@ -161,9 +161,12 @@ type CharacterBirthYearProps = {
 };
 
 function CharacterBirthYear(props: CharacterBirthYearProps) {
+  const formattedBirthYear =
+    props.birthYear === "unknown" ? "Unknown birth year" : props.birthYear;
+
   return (
     <CharacterDetailCard
-      value={props.birthYear}
+      value={formattedBirthYear}
       label="Birth Year"
       icon={faBirthdayCake}
     />
@@ -175,9 +178,12 @@ type CharacterMassProps = {
 };
 
 function CharacterMass(props: CharacterMassProps) {
+  const formattedWeight =
+    props.mass === "unknown" ? "Unknown weight" : `${props.mass} kg`;
+
   return (
     <CharacterDetailCard
-      value={`${props.mass} kg`}
+      value={formattedWeight}
       label="Birth Year"
       icon={faWeightHanging}
     />
@@ -189,9 +195,12 @@ type CharacterHeightProps = {
 };
 
 function CharacterHeight(props: CharacterHeightProps) {
+  const formattedHeight =
+    props.height === "none" ? "Unknown height" : `${props.height} cm`;
+
   return (
     <CharacterDetailCard
-      value={`${props.height} cm`}
+      value={formattedHeight}
       label="Height"
       icon={faRuler}
     />

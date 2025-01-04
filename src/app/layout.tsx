@@ -4,6 +4,8 @@ import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config as fontAwesomeConfig } from "@fortawesome/fontawesome-svg-core";
 import { SEO_EMBARCA_WARS_DESCRIPTION } from "@/constants/seo";
+import StarWarsMainThemeAudioPlayer from "@/components/atomic/organisms/star-wars-main-theme-audio-player";
+import StoreProvider from "@/redux/store-provider";
 fontAwesomeConfig.autoAddCss = false;
 
 const pollerOne = Orbitron({
@@ -22,10 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`bg-black ${pollerOne.className} antialiased`}>
-        {children}
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="en">
+        <body className={`bg-black ${pollerOne.className} antialiased`}>
+          <StarWarsMainThemeAudioPlayer />
+          {children}
+        </body>
+      </html>
+    </StoreProvider>
   );
 }
