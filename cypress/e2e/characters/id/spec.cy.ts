@@ -10,7 +10,7 @@ const WICKET_SYSTRI_WARRICK_DETAILS: Record<string, string> = {
   gender: "male",
 };
 
-describe("Test character details page on /characters/[id]", () => {
+describe("Test character details page on `/characters/[id]` page", () => {
   it("should render character name correctly", () => {
     cy.visit("http://localhost:3000/characters/1");
 

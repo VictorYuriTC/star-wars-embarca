@@ -57,7 +57,7 @@ const ALL_CHARACTERS_FOUND_ON_PAGE_TWO: {
 
 const ALL_PAGINATIONS_IDS_FOUND_ON_PAGE_TWO: number[] = [1, 3];
 
-describe("Test all characters list page on /characters", () => {
+describe("Test all characters list on `/characters` page", () => {
   it("should render several characters names on same page", () => {
     cy.visit(CHARACTERS_PAGE_TWO_URL);
 
