@@ -40,7 +40,7 @@ type CharacterDetailsHeaderProps = {
 
 function CharacterDetailsHeader(props: CharacterDetailsHeaderProps) {
   return (
-    <header className="flex flex-row items-center gap-4 pb-6 border-b border-gray-800">
+    <header className="flex flex-row items-center gap-4 ">
       <CharacterIdCard id={props.character.url.split("/").at(-2)} />
       <CharacterNameCard name={props.character.name} />
     </header>

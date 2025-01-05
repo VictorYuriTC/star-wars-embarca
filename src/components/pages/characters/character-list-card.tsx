@@ -56,10 +56,16 @@ export default function CharacterListCard(props: CharacterListCardProps) {
       id={`character_id-${characterId.toString()}`}
       onMouseEnter={handleOnMouseEnterCard}
       href={`/characters/${characterId}`}
-      className="relative py-5 px-8 border border-white transition-all duration-500 rounded-3xl border-opacity-60 hover:border-opacity-70 hover:border-star-wars-yellow hover:shadow-md hover:shadow-star-wars-yellow">
+      className="group flex flex-row items-center gap-x-4 py-5 px-8 border border-white transition-all duration-500 rounded-3xl border-opacity-60 hover:border-opacity-70 hover:border-star-wars-yellow hover:shadow-md hover:shadow-star-wars-yellow">
       <audio ref={audioRef} src={`/lightsaber-${lightsaberFile}.mp3`} />
 
-      <p className="text-xl text-white">{props.character.name}</p>
+      <span className="text-xl text-white group-hover:text-star-wars-yellow font-black">
+        {characterId}
+      </span>
+
+      <p className="text-xl text-white group-hover:text-star-wars-yellow">
+        {props.character.name}
+      </p>
     </Link>
   );
 }
