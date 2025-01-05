@@ -8,7 +8,7 @@ export default function AllHomePageLightsabers(
   props: AllHomePageLightsabersProps
 ) {
   return (
-    <>
+    <div>
       <AllBlurredRoundedLights
         shouldShowAllBlurredRoundedLights={
           props.shouldShowAllBlurredRoundedLights
@@ -20,7 +20,7 @@ export default function AllHomePageLightsabers(
       <GreenLightsaber
         shouldShowGreenLightsaber={props.shouldShowGreenLightsaber}
       />
-    </>
+    </div>
   );
 }
 

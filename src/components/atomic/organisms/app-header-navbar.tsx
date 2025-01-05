@@ -21,7 +21,7 @@ export default function AppHeaderNavbar() {
 
   return (
     <div className="my-32">
-      <header className="z-[1000] fixed left-0 top-0  right-0 bg-gray-950 border-b shadow shadow-gray-900 border-gray-900 flex flex-row items-center justify-between px-12">
+      <header className="z-[1000] fixed left-0 top-0  right-0 bg-gray-950 border-b shadow shadow-gray-900 border-gray-900 flex flex-row items-center justify-between px-12 bg-opacity-[97.5%]">
         <div className="hidden md:flex flex-row items-center gap-x-10">
           <EmbarcaWarsLogoAndName />
         </div>

@@ -11,13 +11,13 @@ import { useRouter } from "next/navigation";
 import { Dispatch, SetStateAction, useRef, useState } from "react";
 
 export default function HomePage() {
+  const [shouldShowGreenLightsaber, setShouldShowGreenLightsaber] =
+    useState(false);
+  const [shouldShowRedLightsaber, setShouldShowRedLightsaber] = useState(false);
   const [
     shouldShowAllBlurredRoundedLights,
     setShouldShowAllBlurredRoundedLights,
   ] = useState(false);
-  const [shouldShowRedLightsaber, setShouldShowRedLightsaber] = useState(false);
-  const [shouldShowGreenLightsaber, setShouldShowGreenLightsaber] =
-    useState(false);
 
   return (
     <PageTemplate shouldHideDefaultMarginY>

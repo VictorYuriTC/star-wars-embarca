@@ -35,7 +35,14 @@ export default async function CharactersListPage(
 
   return (
     <PageTemplate>
-      <section className="flex flex-col gap-y-5 mb-10">
+      <h1 className="text-3xl text-white font-bold">Star Wars Characters</h1>
+
+      <p className="mt-8 text-white">
+        <span className="font-black">{charactersListResponse.count}</span>{" "}
+        characters found.
+      </p>
+
+      <section className="mt-4 flex flex-col gap-y-5 mb-10">
         {charactersListResponse.results.map((character) => (
           <CharacterListCard
             character={character}
