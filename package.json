@@ -11,7 +11,8 @@
     "test:spec": "cypress run --spec",
     "test:characters": "npm run test:spec cypress/e2e/characters/spec.cy.ts",
     "test:characters-id": "npm run test:spec cypress/e2e/characters/id/spec.cy.ts",
-    "test:all": "npm run test:characters && npm run test:characters-id"
+    "test:home": "npm run test:spec cypress/e2e/spec.cy.ts",
+    "test:all": "npm run test:home && npm run test:characters && npm run test:characters-id"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",

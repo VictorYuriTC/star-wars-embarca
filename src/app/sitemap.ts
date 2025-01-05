@@ -24,8 +24,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${EMBARCA_STAR_WARS_URL}/characters/${index + 1}`,
       priority: 1,
       changeFrequency: "monthly",
+      lastModified: "2025-01-05",
     })
   );
 
-  return allCharactersRoutes;
+  const otherRoutes: MetadataRoute.Sitemap = [
+    {
+      url: EMBARCA_STAR_WARS_URL,
+      priority: 1,
+      changeFrequency: "weekly",
+      lastModified: "2025-01-05",
+    },
+
+    {
+      url: `${EMBARCA_STAR_WARS_URL}/characters`,
+      priority: 0.9,
+      changeFrequency: "monthly",
+      lastModified: "2025-01-05",
+    },
+  ];
+
+  return [...otherRoutes, ...allCharactersRoutes];
 }
