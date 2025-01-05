@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { toggleIsBackgroundMusicEnabled } from "@/redux/slices/user-preferences";
 import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function StarWarsMainThemeAudioPlayer() {
   const isBackgroundMusicEnabled = useAppSelector(
@@ -45,6 +45,16 @@ export default function StarWarsMainThemeAudioPlayer() {
 
     playAudio();
   }
+
+  useEffect(() => {
+    if (isBackgroundMusicEnabled) {
+      audioRef.current?.play();
+
+      return;
+    }
+
+    audioRef.current?.pause();
+  }, [isBackgroundMusicEnabled]);
 
   return (
     <div className="z-40 p-4">
