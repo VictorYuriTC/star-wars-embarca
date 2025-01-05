@@ -6,7 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "cypress open",
+    "test:spec": "cypress run --spec",
+    "test:characters": "npm run test:spec cypress/e2e/characters/spec.cy.ts",
+    "test:characters-id": "npm run test:spec cypress/e2e/characters/id/spec.cy.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -24,6 +28,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cypress": "^13.17.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.3",
     "postcss": "^8",

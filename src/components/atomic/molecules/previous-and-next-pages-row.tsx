@@ -32,16 +32,18 @@ function LinkToDifferentPage(props: LinkToDifferentPageProps) {
     return <></>;
   }
 
-  const currentPageLinkClassName = "bg-transparent hover:bg-opacity-100";
+  const currentPageLinkClassName = "bg-transparent hover:bg-transparent";
 
   const currentPageSpanClassName = "text-white";
 
-  const linkWrapperClassName = `flex flex-row items-center justify-center bg-white rounded-full p-3 hover:bg-opacity-80 ${
-    props.isCurrentPage && currentPageLinkClassName
+  const linkWrapperClassName = `flex flex-row items-center justify-center rounded-full p-3 ${
+    props.isCurrentPage
+      ? currentPageLinkClassName
+      : "bg-white hover:bg-gray-300"
   }`;
 
-  const innerSpanClassName = `text-xl text-black ${
-    props.isCurrentPage && currentPageSpanClassName
+  const innerSpanClassName = `text-xl ${
+    props.isCurrentPage ? currentPageSpanClassName : "text-black"
   }`;
 
   if (props.isCurrentPage) {

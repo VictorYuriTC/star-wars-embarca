@@ -50,13 +50,13 @@ export default function StarWarsMainThemeAudioPlayer() {
     <div className="z-40 fixed top-0 right-0 p-4">
       <button
         onClick={togglePlayPause}
-        className="flex flex-row items-center gap-x-3 bg-white px-4 py-2 rounded-full hover:bg-opacity-85">
+        className="flex flex-row items-center gap-x-3 bg-white px-4 py-2 rounded-full hover:bg-gray-300">
         <FontAwesomeIcon
           className="text-black"
           icon={isBackgroundMusicEnabled ? faPause : faPlay}
         />
 
-        <span className="text-sm">Sound Effects</span>
+        <span className="text-sm text-black">Sound Effects</span>
       </button>
 
       <audio ref={audioRef} src="/star-wars-main-theme.mp3" loop />
