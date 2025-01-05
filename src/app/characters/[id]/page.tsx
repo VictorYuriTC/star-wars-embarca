@@ -81,8 +81,6 @@ export default async function CharacterDetailsPage(
 
   const starWarsCharacter: StarWarsCharacter = await res.json();
 
-  console.log(starWarsCharacter);
-
   return (
     <PageTemplate>
       <CharacterDetailsCard character={starWarsCharacter} />

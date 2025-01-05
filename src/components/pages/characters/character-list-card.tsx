@@ -53,6 +53,7 @@ export default function CharacterListCard(props: CharacterListCardProps) {
 
   return (
     <Link
+      id={`character_id-${characterId.toString()}`}
       onMouseEnter={handleOnMouseEnterCard}
       href={`/characters/${characterId}`}
       className="relative py-5 px-8 border border-white transition-all duration-500 rounded-3xl border-opacity-60 hover:border-opacity-70 hover:border-star-wars-yellow hover:shadow-md hover:shadow-star-wars-yellow">
