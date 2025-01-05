@@ -24,6 +24,9 @@
 
 # Setup
 
+- Requirements:
+  - [Node](https://nodejs.org/en) installed
+  - [npm](https://www.npmjs.com/) (or a different package manager) installed
 - If you want to run and/or test this project locally, please:
   - clone this repo
   - run `npm install` on root folder to install all dependencies
@@ -39,6 +42,7 @@
   - ensure the project is up and running on `localhost:3000` by running `npm run dev`
 - E2E tests were added using [Cypress](https://www.cypress.io/)
 - Run `npm run test:all` to run all tests
+- Run `npm run test:home` to test `/` page
 - Run `npm run test:characters` to test `/characters` page
 - Run `npm run test:characters-id` to test `/characters/[id]` pages
 - Check `package.json` file to see more about testing
