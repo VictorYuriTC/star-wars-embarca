@@ -56,6 +56,7 @@ function LinkToDifferentPage(props: LinkToDifferentPageProps) {
 
   return (
     <Link
+      id={`pagination-${props.page}`}
       className={linkWrapperClassName}
       href={`characters?page=${props.page}`}>
       <span className={innerSpanClassName}>{props.page}</span>
