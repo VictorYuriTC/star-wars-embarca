@@ -2,14 +2,19 @@ import { ReactNode } from "react";
 
 type PageTemplateProps = {
   children: ReactNode;
+  shouldHideDefaultMarginY?: boolean;
 };
 
 export default function PageTemplate(props: PageTemplateProps) {
+  const DEFAULT_MARGIN_Y = "my-24";
+
+  const marginY = props.shouldHideDefaultMarginY ? "" : DEFAULT_MARGIN_Y;
+
   return (
     <main
       itemScope
       itemType="https://schema.org/CreativeWork"
-      className="my-8 mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-32">
+      className={`mx-4 sm:mx-16 md:mx-24 lg:mx-32 xl:mx-48 ${marginY}`}>
       <meta itemProp="name" content="Embarca Wars" />
       <meta itemProp="sameAs" content="Star Wars" />
       <meta itemProp="alternateName" content="Embarca Ai" />

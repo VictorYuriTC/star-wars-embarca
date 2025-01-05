@@ -40,7 +40,7 @@ type CharacterDetailsHeaderProps = {
 
 function CharacterDetailsHeader(props: CharacterDetailsHeaderProps) {
   return (
-    <header className="flex flex-row items-center gap-4 ">
+    <header className="flex flex-row items-center gap-x-6">
       <CharacterIdCard id={props.character.url.split("/").at(-2)} />
       <CharacterNameCard name={props.character.name} />
     </header>
@@ -77,8 +77,8 @@ type CharacterIdCardProps = {
 
 function CharacterIdCard(props: CharacterIdCardProps) {
   return (
-    <div className="flex flex-row items-center justify-center rounded-full py-3 px-3 bg-white">
-      <span className="text-xl text-black">{props.id ?? "Unknown"}</span>
+    <div className="flex flex-row items-center justify-center">
+      <span className="text-3xl text-white">{props.id ?? "Unknown"}</span>
     </div>
   );
 }
